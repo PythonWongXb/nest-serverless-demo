@@ -8,5 +8,6 @@
 ###
 #!/bin/bash
 yarn
+yarn build
 
 /var/lang/node12/bin/node ./dist/main.js

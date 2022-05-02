@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    @Inject('MATH_SERVICE_INTERFLOW') private client: ClientProxy,
+    @Inject('MATH_SERVICE') private client: ClientProxy,
   ) {}
 
   @MessagePattern('math:wordcount-old')
@@ -43,5 +43,17 @@ export class AppController {
   @EventPattern('math:wordcount_log')
   microWordCountLog(text: string): void {
     this.client.emit('math:mirco-wordcount_log', text);
+  }
+
+  @Get('/demo')
+  execute(): Observable<number> {
+    const pattern = { cmd: 'sum' };
+    const data = [1, 2, 3, 4, 5];
+    return this.client.send<number>(pattern, data);
+  }
+
+  @MessagePattern({ cmd: 'sum' })
+  sum(data: number[]): number {
+    return (data || []).reduce((a, b) => a + b);
   }
 }

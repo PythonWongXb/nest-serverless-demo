@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yarn
-yarn build
+# yarn
+# yarn build
 
 /var/lang/node12/bin/node ./dist/main.js

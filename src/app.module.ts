@@ -18,7 +18,7 @@ import { AppService } from './app.service';
         name: 'MATH_SERVICE',
         transport: Transport.REDIS,
         options: {
-          url: 'redis://localhost:6379',
+          url: 'redis://81.70.221.165:6379',
         },
       },
     ]),

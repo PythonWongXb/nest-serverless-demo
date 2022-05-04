@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-04-26 18:06:25
- * @LastEditTime: 2022-05-04 09:37:45
+ * @LastEditTime: 2022-05-04 11:02:20
  * @LastEditors: Evan Zuo v_wangxiangbo01@baidu.com
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /ms-math/src/app.controller.ts
@@ -37,9 +37,14 @@ export class AppController {
     console.log(text);
   }
 
-  @EventPattern('demo')
+  @EventPattern('demo:6379')
   demo(text: string): void {
     console.log(text);
+  }
+
+  @MessagePattern('demo:string')
+  async test(text: string): Promise<string> {
+    return text + 'success';
   }
 
   // micro

@@ -2,7 +2,7 @@
  * @Author: Evan Zuo v_wangxiangbo01@baidu.com
  * @Date: 2022-05-03 13:59:38
  * @LastEditors: Evan Zuo v_wangxiangbo01@baidu.com
- * @LastEditTime: 2022-05-04 09:40:15
+ * @LastEditTime: 2022-05-04 11:06:35
  * @FilePath: /nest-serverless-demo/src/main.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -28,7 +28,7 @@ async function bootstrap() {
     options: {
       retryAttempts: 5,
       retryDelay: 3000,
-      url: 'redis://localhost:6379',
+      url: 'redis://81.70.221.165:6379',
     },
   });
 
